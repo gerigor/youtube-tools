@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'mainPage',
     'ytThumbDownloader',
     'ytVideoDownloader',
+    'ytTagExtractor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

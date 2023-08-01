@@ -9,6 +9,8 @@ pillow = "*"
 pyperclip = "*"
 pytube = "*"
 youtube-dl = {git = "https://github.com/ytdl-org/youtube-dl.git"}
+requests = "*"
+beautifulsoup4 = "*"
 
 [dev-packages]
 

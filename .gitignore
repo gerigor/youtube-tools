@@ -7,4 +7,4 @@ docker-compose.yml
 docker-files/
 logs/
 sandbox/
-static/
+mainPage/static/

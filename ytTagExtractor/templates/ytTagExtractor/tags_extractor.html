@@ -52,7 +52,21 @@
 
 
         {% if tags %}
-            {{ tags }}
+             <!-- Tags Content -->
+
+          <div class="block block-rounded">
+            <div class="block-content text-center">
+             <div class="mb-4">
+                  {% for tag in tags %}
+
+                  <button type="button" class="btn btn-alt-secondary me-1 mb-3" disabled="">{{ tag }}</button>
+                  {% endfor %}
+             </div>
+            </div>
+          </div>
+
+        <!-- END Tags Content -->
+
         {% endif %}
 
         </div>

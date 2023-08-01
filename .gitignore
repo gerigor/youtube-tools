@@ -1,0 +1,10 @@
+*__pycache__*
+.env
+.idea/
+.pytest_cache/
+.venv/
+docker-compose.yml
+docker-files/
+logs/
+sandbox/
+static/

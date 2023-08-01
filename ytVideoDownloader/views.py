@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from .forms import DownloadForm
+from common.forms import YtForm
 
 from .services.video_downloader_services import extract_meta_info, create_video_audio_streams_list, create_context
 
 
 def download_video(request):
-    form = DownloadForm(request.POST or None)
+    form = YtForm(request.POST or None)
 
     if form.is_valid():
         video_url = form.cleaned_data.get('url')

@@ -2,7 +2,7 @@ from django import forms
 import re
 
 
-class DownloadForm(forms.Form):
+class YtForm(forms.Form):
     url = forms.CharField(
         widget=forms.TextInput(attrs={'placeholder': 'Video url', 'class': 'form-control'}),
         label=False,

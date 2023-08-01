@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow">
+
+        {% include "includes/sidebar.html" %}
+        {% include "includes/header.html" %}
+
+      <!-- Main Container -->
+      <main id="main-container">
+        <!-- Hero -->
+        <div class="bg-primary-dark">
+          <div class="content content-full text-center ">
+                 <a href="http://127.0.0.1:8000/tags-extractor" title="Youtube Tags Extractor">
+                <h1 class="h2 text-white mb-2">
+                 Youtube Tags Extractor
+                </h1>
+               </a>
+          </div>
+        </div>
+        <!-- END Hero -->
+
+        <!-- Page Content -->
+        <div class="content">
+          <div class="block block-rounded">
+            <div class="block-content text-center">
+              <div class="block-content block-content-full">
+              <form action="" method="POST" >
+                 {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-4">
+                    <p class="fs-sm text-muted">
+                      Paste the video link to see all its available tags
+                    </p>
+                  </div>
+                  <div class="col-lg-8 col-xl-5">
+                    <div class="mb-4">
+                      <div class="input-group">
+                        {{ form }}
+                        <button type="submit" class="btn btn-lg btn-dark" data-toggle="click-ripple"><i class="fab fa-fw fa-youtube me-1"></i>Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+
+
+        {% if tags %}
+             <!-- Tags Content -->
+
+          <div class="block block-rounded">
+            <div class="block-content text-center">
+             <div class="mb-4">
+                  {% for tag in tags %}
+
+                  <button type="button" class="btn btn-alt-secondary me-1 mb-3" disabled="">{{ tag }}</button>
+                  {% endfor %}
+             </div>
+            </div>
+          </div>
+
+        <!-- END Tags Content -->
+
+        {% endif %}
+
+        </div>
+        <!-- END Page Content -->
+
+
+      </main>
+      <!-- END Main Container -->
+
+     {% include "includes/footer.html" %}
+
+    </div>
+    <!-- END Page Container -->
+
+
+{% endblock %}

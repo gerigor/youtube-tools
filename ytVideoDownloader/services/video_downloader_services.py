@@ -39,13 +39,19 @@ def create_video_audio_streams_list(meta_info: dict):
 
 def create_context(form, meta_info: dict, video_audio_streams: list, video_url: str):
     """ Returns context for template. """
+
+    try:
+        small_thumb = meta_info.get('thumbnails', [])[4]['url']
+    except IndexError:
+        small_thumb = None
+
     return {
         'form': form,
         'title': meta_info.get('title', None),
         'streams': video_audio_streams[::-1],  # reverses the order of the list
         'description': meta_info.get('description'),
         'likes': f'{int(meta_info.get("like_count", 0)):,}',
-        'thumb': meta_info.get('thumbnails')[4]['url'],
+        'thumb': small_thumb,
         'big_thumb': meta_info.get('thumbnail'),
         'duration': round(int(meta_info.get('duration', 1)) / 60, 2),
         'views': f'{int(meta_info.get("view_count")):,}',

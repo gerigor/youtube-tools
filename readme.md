@@ -10,7 +10,7 @@
 - Extracts all tags from given youtube video
 
 ### Tags Generator
-- Generates tags from given video title.
+- Generates tags from given video title
 
 ## Installation
 - run command "pipenv install"
@@ -30,7 +30,7 @@ docker-compose down
 python manage.py runserver
 ```
 
-## Html theme used in the project
+### Html theme used in the project
 ```
 https://themeforest.net/item/oneui-bootstrap-admin-dashboard-template-ui-framework-angularjs/11820082 
 ```

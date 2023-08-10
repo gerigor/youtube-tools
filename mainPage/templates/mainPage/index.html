@@ -1,1 +1,44 @@
-Hello, world. You're at the main page
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow">
+
+        {% include "includes/sidebar.html" %}
+        {% include "includes/header.html" %}
+
+      <!-- Main Container -->
+      <main id="main-container">
+        <!-- Hero -->
+        <div class="bg-primary-dark">
+          <div class="content content-full text-center ">
+                 <a href="" title="Hello World!">
+                <h1 class="h2 text-white mb-2">
+                 Hello World!
+                </h1>
+               </a>
+          </div>
+        </div>
+        <!-- END Hero -->
+
+        <!-- Page Content -->
+        <div class="content">
+          <div class="block block-rounded">
+            <div class="block-content text-center">
+              <div class="block-content block-content-full">
+                    You are at the main page.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END Page Content -->
+
+      </main>
+      <!-- END Main Container -->
+
+     {% include "includes/footer.html" %}
+
+    </div>
+    <!-- END Page Container -->
+
+{% endblock %}

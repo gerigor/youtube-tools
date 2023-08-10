@@ -8,3 +8,5 @@ docker-files/
 logs/
 sandbox/
 mainPage/static/
+mainPage/templates/
+*/templates/

@@ -43,7 +43,8 @@ def generate_all_tags(video_ids: list):
             break
 
     unique_tags = list(set(all_tags))[:30]  # Get the first 30 unique tags
-    print(unique_tags)
+    for tag in unique_tags:
+        print(f'{tag},')
 
     return unique_tags
 

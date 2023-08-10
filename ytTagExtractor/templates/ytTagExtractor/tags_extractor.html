@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
-
 {% block content %}
     <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow">
 
@@ -57,11 +55,30 @@
           <div class="block block-rounded">
             <div class="block-content text-center">
              <div class="mb-4">
+                 <div style="text-align: center; padding-bottom: 20px">
+                      <a
+                        href="javascript:void(0);"
+                        class="btn btn-sm btn-alt-secondary"
+                        id="copy-all-link"
+                      >
+
+                          <i class="fa fa-thumbs-up text-success me-1"></i> Copy All to Clipboard
+
+                      </a>
+                  </div>
+
                   {% for tag in tags %}
 
-                  <button type="button" class="btn btn-alt-secondary me-1 mb-3" disabled="">{{ tag }}</button>
+                 <button
+                          type="button"
+                          class="btn btn-alt-secondary me-1 mb-3 selectable-tag"
+                          data-tag="{{ tag }}"
+                  >
+                    {{ tag }}
+                 </button>
                   {% endfor %}
              </div>
+                    <script src="{% static 'js/copy-tags.js' %}"></script>
             </div>
           </div>
 

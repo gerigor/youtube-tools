@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'ytVideoDownloader',
     'ytTagExtractor',
     'ytTagsGenerator',
+    'ytLinkShortener',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -12,6 +12,9 @@
 ### Tags Generator
 - Generates tags from given video title
 
+### Link Shortener
+- Shortens any youtube link
+
 ## Installation
 - run command "pipenv install"
 

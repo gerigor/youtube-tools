@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from common.forms import YtForm
-from ytTagExtractor.services.tags_extract_services import extract_all_tags, create_context
+from yt_tag_extractor.services.tags_extract_services import extract_all_tags, create_context
 
 
 def extract_tags(request):
@@ -11,6 +11,6 @@ def extract_tags(request):
         all_tags = extract_all_tags(video_url)
         context = create_context(form, all_tags, video_url)
 
-        return render(request, 'ytTagExtractor/tags_extractor.html', context)
+        return render(request, 'yt_tag_extractor/tags_extractor.html', context)
 
-    return render(request, 'ytTagExtractor/tags_extractor.html', {'form': form})
+    return render(request, 'yt_tag_extractor/tags_extractor.html', {'form': form})

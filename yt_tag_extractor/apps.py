@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class YtvideodownloaderConfig(AppConfig):
+class Yt_tag_extractorConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'ytVideoDownloader'
+    name = 'yt_tag_extractor'

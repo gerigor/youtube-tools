@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class YttagextractorConfig(AppConfig):
+class Yt_thumb_downloaderConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'ytTagExtractor'
+    name = 'yt_thumb_downloader'

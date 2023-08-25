@@ -12,6 +12,6 @@ def generate_tags(request):
         generated_tags = generate_all_tags(videoids)
         context = create_context(form, generated_tags, title)
 
-        return render(request, 'ytTagsGenerator/tags_generator.html', context)
+        return render(request, 'yt_tags_generator/tags_generator.html', context)
 
-    return render(request, 'ytTagsGenerator/tags_generator.html', {'form': form})
+    return render(request, 'yt_tags_generator/tags_generator.html', {'form': form})

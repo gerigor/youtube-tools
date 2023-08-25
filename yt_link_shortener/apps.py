@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class YttagsgeneratorConfig(AppConfig):
+class Yt_link_shortenerConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'ytTagsGenerator'
+    name = 'yt_link_shortener'

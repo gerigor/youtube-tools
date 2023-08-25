@@ -13,6 +13,6 @@ def download_video(request):
         video_audio_streams = create_video_audio_streams_list(meta_info)
         context = create_context(form, meta_info, video_audio_streams, video_url)
 
-        return render(request, 'ytVideoDownloader/video_downloader.html', context)
+        return render(request, 'yt_video_downloader/video_downloader.html', context)
 
-    return render(request, 'ytVideoDownloader/video_downloader.html', {'form': form})
+    return render(request, 'yt_video_downloader/video_downloader.html', {'form': form})

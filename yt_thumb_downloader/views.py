@@ -13,6 +13,6 @@ def downloader(request):
             thumbnail_urls = extract_thumbnails(video_id)
             context = create_context(form, video_id, thumbnail_urls)
 
-            return render(request, 'ytThumbDownloader/thumb_downloader.html', context)
+            return render(request, 'yt_thumb_downloader/thumb_downloader.html', context)
 
-    return render(request, 'ytThumbDownloader/thumb_downloader.html', {'form': form})
+    return render(request, 'yt_thumb_downloader/thumb_downloader.html', {'form': form})

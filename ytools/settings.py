@@ -32,11 +32,11 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'mainPage',
-    'ytThumbDownloader',
-    'ytVideoDownloader',
-    'ytTagExtractor',
-    'ytTagsGenerator',
-    'ytLinkShortener',
+    'yt_thumb_downloader',
+    'yt_video_downloader',
+    'yt_tag_extractor',
+    'yt_tags_generator',
+    'yt_link_shortener',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

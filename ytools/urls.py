@@ -21,9 +21,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('mainPage.urls')),
-    path('thumb-downloader', include('ytThumbDownloader.urls')),
-    path('video-downloader', include('ytVideoDownloader.urls')),
-    path('tags-extractor', include('ytTagExtractor.urls')),
-    path('tags-generator', include('ytTagsGenerator.urls')),
+    path('thumb-downloader', include('yt_thumb_downloader.urls')),
+    path('video-downloader', include('yt_video_downloader.urls')),
+    path('tags-extractor', include('yt_tag_extractor.urls')),
+    path('tags-generator', include('yt_tags_generator.urls')),
+    path('link-shortener', include('yt_link_shortener.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

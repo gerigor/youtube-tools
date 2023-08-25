@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class YtthumbdownloaderConfig(AppConfig):
+class Yt_video_downloaderConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'ytThumbDownloader'
+    name = 'yt_video_downloader'

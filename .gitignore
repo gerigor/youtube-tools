@@ -6,5 +6,5 @@
 docker-compose.yml
 docker-files/
 logs/
-mainPage/static/
+main_page/static/
 */templates/

@@ -19,21 +19,6 @@ _To see in action: [ytools.org](https://ytools.org)_
 ## Installation
 - run command "pipenv install"
 
-## Docker
-### To start containers
-```
-docker-compose up -d
-```
-### To stop containers
-```
-docker-compose down
-```
-
-## Run django
-```shell
-python manage.py runserver
-```
-
 ### Html theme used in the project
 ```
 https://themeforest.net/item/oneui-bootstrap-admin-dashboard-template-ui-framework-angularjs/11820082 

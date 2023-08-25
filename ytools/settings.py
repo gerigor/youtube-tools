@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'mainPage',
+    'main_page',
     'yt_thumb_downloader',
     'yt_video_downloader',
     'yt_tag_extractor',

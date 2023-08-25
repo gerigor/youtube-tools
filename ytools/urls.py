@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('mainPage.urls')),
+    path('', include('main_page.urls')),
     path('thumb-downloader', include('yt_thumb_downloader.urls')),
     path('video-downloader', include('yt_video_downloader.urls')),
     path('tags-extractor', include('yt_tag_extractor.urls')),

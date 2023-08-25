@@ -16,10 +16,15 @@ _To see in action: [ytools.org](https://ytools.org)_
 ### Link Shortener
 - Shortens any youtube link
 
-## Installation
-- run command "pipenv install"
-
-### Html theme used in the project
-```
-https://themeforest.net/item/oneui-bootstrap-admin-dashboard-template-ui-framework-angularjs/11820082 
-```
+## Roadmap
+- Description link changer
+- Display all video meta info
+- Display all channel meta info
+- Get subtitles
+- Get channel banner
+- Video stats
+- Channel stats
+- Generate link with time
+- Generate embedded code
+- Playlist stats
+- Download part of the video

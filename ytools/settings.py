@@ -23,14 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&*9r$&-otr_e(en-%g=b)cc2yjim3l9xj&ze(=c0)clb_s41nh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['ytools.org',
-                 '127.0.0.1',
-                 '85.31.239.185',
-                 'www.srv518426.hstgr.cloud',
-                 'whm.srv518426.hstgr.cloud',
-                 'www.ytools.org']
+ALLOWED_HOSTS = ['ytools.org', '127.0.0.1', 'www.ytools.org']
 
 
 # Application definition
@@ -42,6 +37,7 @@ INSTALLED_APPS = [
     'yt_tag_extractor',
     'yt_tags_generator',
     'yt_link_shortener',
+    'webhooks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

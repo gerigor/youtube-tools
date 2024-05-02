@@ -3,49 +3,43 @@ from bs4 import BeautifulSoup
 import re
 
 
-def get_videoids_from_search_results(title: str):
-    """ Returns video ids from first page of search query sorted by views for the last year. """
-
+def get_video_ids_from_search_results(title: str) -> list | None:
+    """Return video ids from first page of search query sorted by views for the last year."""
     search_query = f'https://www.youtube.com/results?search_query={title.replace(" ", "+")}&sp=CAMSAggF'
     response = requests.get(search_query)
+    if response.status_code != 200:
+        return
+    soup = BeautifulSoup(response.text, 'html.parser')
+    video_ids = re.findall(r'"videoRenderer":{"videoId":"([^"]+)"', str(soup))
+    return video_ids
 
-    if response.status_code == 200:
-        soup = BeautifulSoup(response.text, 'html.parser')
-        video_ids = re.findall(r'"videoRenderer":{"videoId":"([^"]+)"', str(soup))
 
-        return video_ids
-
-
-def exctract_tags_from_video(video_url: str):
+def extract_tags_from_video(video_url: str):
     """ Returns tags as a list from given url. """
     response = requests.get(video_url)
 
-    if response.status_code == 200:
-        soup = BeautifulSoup(response.text, 'html.parser')
-        tags_elements = soup.select('meta[property="og:video:tag"]')
+    if response.status_code != 200:
+        return
+
+    soup = BeautifulSoup(response.text, 'html.parser')
+    tags_elements = soup.select('meta[property="og:video:tag"]')
+    if tags_elements:
         tags = [tag['content'] for tag in tags_elements]
         return tags
-    else:
-        print('Video has no tags.')
+    return
 
 
 def generate_all_tags(video_ids: list):
-    """ Get unique tags from youtube videos. """
-
+    """Get unique tags from youtube videos."""
     all_tags = []
-
     for video_id in video_ids:
         video_url = f'https://www.youtube.com/watch?v={video_id}'
-        tags = exctract_tags_from_video(video_url)
+        tags = extract_tags_from_video(video_url)
         all_tags.extend(tags)
-
         if len(set(all_tags)) >= 30:
             break
 
     unique_tags = list(set(all_tags))[:30]  # Get the first 30 unique tags
-    for tag in unique_tags:
-        print(f'{tag},')
-
     return unique_tags
 
 

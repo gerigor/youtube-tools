@@ -2,7 +2,7 @@ import re
 
 
 def extract_video_id(url: str):
-    """ Gets video id from given url. """
+    """Get video id from given url. """
     pattern = r"(?:youtu\.be\/|youtube\.com\/(?:watch\?.*v=|v\/|embed\/|.*\/v\/))([^?&\"'>]+)"
     match = re.search(pattern, url)
     if match:
@@ -10,8 +10,8 @@ def extract_video_id(url: str):
     return None
 
 
-def extract_thumbnails(video_id: str):
-    """ Returns list of thumbnail urls. """
+def extract_thumbnails(video_id: str) -> list:
+    """Return list of thumbnail urls."""
     default_thumbnail = f'https://img.youtube.com/vi/{video_id}/default.jpg'
     medium_thumbnail = f'https://img.youtube.com/vi/{video_id}/mqdefault.jpg'
     high_thumbnail = f'https://img.youtube.com/vi/{video_id}/hqdefault.jpg'

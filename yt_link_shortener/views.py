@@ -16,6 +16,10 @@ def link_shortener(request):
                 'shorten_link': shorten_link,
             })
 
-    return render(request, 'yt_link_shortener/link_shortener.html', {'form': form})
-
-# Create your views here.
+    return render(
+        request,
+        'yt_link_shortener/link_shortener.html',
+        {
+            'form': form
+        }
+    )

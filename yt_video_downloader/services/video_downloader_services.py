@@ -1,9 +1,8 @@
 import youtube_dl
 
 
-def extract_meta_info(video_url: str):
-    """Get video information from its url using youtube_dl lib. Returns dictionary."""
-
+def extract_meta_info(video_url: str) -> dict:
+    """Get video information from its url using youtube_dl lib. Return dictionary."""
     ydl_opts = {}
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         meta = ydl.extract_info(
@@ -11,14 +10,12 @@ def extract_meta_info(video_url: str):
     return meta
 
 
-def create_video_audio_streams_list(meta_info: dict):
+def create_video_audio_streams_list(meta_info: dict) -> list[dict]:
     """Create list of video and audio streams."""
-
     video_audio_streams = []
 
     for meta in meta_info['formats']:
         file_size = meta.get('filesize')
-
         if file_size:
             file_size = f'{round(int(file_size) / 1000000, 2)} mb'  # bytes to mb
         resolution = 'Audio only'
@@ -34,12 +31,12 @@ def create_video_audio_streams_list(meta_info: dict):
             'extension': meta.get('ext', None),
             'file_size': file_size,
             'video_url': meta.get('url', None),
-            'format_note': meta.get('format_note'),
+            'format_note': meta.get('format_note', None),
         })
     return video_audio_streams
 
 
-def create_context(form, meta_info: dict, video_audio_streams: list, video_url: str):
+def create_context(form, meta_info: dict, video_audio_streams: list, video_url: str) -> dict:
     """ Returns context for template. """
 
     try:

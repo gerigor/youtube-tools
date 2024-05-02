@@ -4,7 +4,7 @@
         <!-- Side Header -->
         <div class="content-header">
           <!-- Logo -->
-          <a class="fw-semibold text-dual" href="http://127.0.0.1:8000/">
+          <a class="fw-semibold text-dual" href="/">
             <span class="smini-visible">
               <i class="fa fa-circle-notch text-primary"></i>
             </span>
@@ -38,7 +38,7 @@
           <div class="content-side">
             <ul class="nav-main">
               <li class="nav-main-item">
-                <a class="nav-main-link" href="http://127.0.0.1:8000/">
+                <a class="nav-main-link" href="/">
                   <i class="nav-main-link-icon si si-speedometer"></i>
                   <span class="nav-main-link-name">Dashboard</span>
                 </a>
@@ -46,23 +46,23 @@
 
               <li class="nav-main-heading">Youtube</li>
 
-                <a class="nav-main-link" aria-haspopup="true" aria-expanded="false" href="http://127.0.0.1:8000/video-downloader">
+                <a class="nav-main-link" aria-haspopup="true" aria-expanded="false" href="{% url 'video_downloader' %}">
                   <i class="nav-main-link-icon si si-energy"></i>
                   <span class="nav-main-link-name">Video Downloader</span>
                 </a>
-              <a class="nav-main-link" aria-haspopup="true" aria-expanded="false" href="http://127.0.0.1:8000/thumb-downloader">
+              <a class="nav-main-link" aria-haspopup="true" aria-expanded="false" href="{% url 'thumb_downloader' %}">
                   <i class="nav-main-link-icon si si-energy"></i>
                   <span class="nav-main-link-name">Thumb Downloader</span>
                 </a>
-              <a class="nav-main-link" aria-haspopup="true" aria-expanded="false" href="http://127.0.0.1:8000/tags-extractor">
+              <a class="nav-main-link" aria-haspopup="true" aria-expanded="false" href="{% url 'tags_extractor' %}">
                   <i class="nav-main-link-icon si si-energy"></i>
                   <span class="nav-main-link-name">Tags Extractor</span>
                 </a>
-              <a class="nav-main-link" aria-haspopup="true" aria-expanded="false" href="http://127.0.0.1:8000/tags-generator">
+              <a class="nav-main-link" aria-haspopup="true" aria-expanded="false" href="{% url 'tags_generator' %}">
                   <i class="nav-main-link-icon si si-energy"></i>
                   <span class="nav-main-link-name">Tags Generator</span>
                 </a>
-               <a class="nav-main-link" aria-haspopup="true" aria-expanded="false" href="http://127.0.0.1:8000/link-shortener">
+               <a class="nav-main-link" aria-haspopup="true" aria-expanded="false" href="{% url 'link_shortener' %}">
                   <i class="nav-main-link-icon si si-energy"></i>
                   <span class="nav-main-link-name">Link Shortener</span>
                 </a>

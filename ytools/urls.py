@@ -27,4 +27,5 @@ urlpatterns = [
     path('tags-generator', include('yt_tags_generator.urls')),
     path('link-shortener', include('yt_link_shortener.urls')),
     path('admin/', admin.site.urls),
+    path('wh/', include('webhooks.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

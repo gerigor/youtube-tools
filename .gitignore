@@ -7,6 +7,5 @@ docker-compose.yml
 docker-files/
 logs/
 main_page/static/
-*/templates/
 webhooks
 logs

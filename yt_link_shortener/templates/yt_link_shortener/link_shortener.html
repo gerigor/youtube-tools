@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow">
+        {% include "includes/sidebar.html" %}
+        {% include "includes/header.html" %}
+      <main id="main-container">
+        <div class="bg-primary-dark">
+          <div class="content content-full text-center ">
+                 <a href="{% url 'link_shortener' %}" title="Youtube Link Shortener">
+                <h1 class="h2 text-white mb-2">
+                 Youtube Link Shortener
+                </h1>
+               </a>
+          </div>
+        </div>
+        <div class="content">
+          <div class="block block-rounded">
+            <div class="block-content text-center">
+              <div class="block-content block-content-full">
+              <form action="" method="POST" >
+                 {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-4">
+                    <p class="fs-sm text-muted">
+                      Insert youtube link to see its shortened version
+                    </p>
+                  </div>
+                  <div class="col-lg-8 col-xl-5">
+                    <div class="mb-4">
+                      <div class="input-group">
+                        {{ form }}
+                        <button type="submit" class="btn btn-lg btn-dark" data-toggle="click-ripple"><i class="fab fa-fw fa-youtube me-1"></i>Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        {% if shorten_link %}
+          <div class="block block-rounded">
+            <div class="block-content text-center">
+             <div class="mb-4">
+                 <div style="text-align: center; padding-bottom: 20px">
+                      <a
+                        href="javascript:void(0);"
+                        class="btn btn-sm btn-alt-secondary"
+                        id="copy-link"
+                      >
+                          <i class="fa fa-thumbs-up text-success me-1"></i> Copy to Clipboard
+                      </a>
+                  </div>
+                 <button
+                          type="button"
+                          class="btn btn-alt-secondary me-1 mb-3 selectable-link"
+                          data-tag="{{ shorten_link }}"
+                  >
+                    {{ shorten_link }}
+                 </button>
+             </div>
+                    <script src="{% static 'js/copy-link.js' %}"></script>
+            </div>
+          </div>
+        {% endif %}
+        </div>
+      </main>
+     {% include "includes/footer.html" %}
+    </div>
+{% endblock %}

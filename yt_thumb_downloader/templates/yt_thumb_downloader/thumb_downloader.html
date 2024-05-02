@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow">
+        {% include "includes/sidebar.html" %}
+        {% include "includes/header.html" %}
+      <main id="main-container">
+        <div class="bg-primary-dark">
+          <div class="content content-full text-center ">
+                 <a href="{% url 'thumb_downloader' %}" title="Youtube Thumbnail Downloader">
+                <h1 class="h2 text-white mb-2">
+                 Youtube Thumbnail Downloader
+                </h1>
+               </a>
+          </div>
+        </div>
+          <div class="content">
+          <div class="block block-rounded">
+            <div class="block-content text-center">
+              <div class="block-content block-content-full">
+              <form action="" method="POST" >
+                 {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-4">
+                    <p class="fs-sm text-muted">
+                      Paste the video link to see all its available thumbnails
+                    </p>
+                  </div>
+                  <div class="col-lg-8 col-xl-5">
+                    <div class="mb-4">
+                      <div class="input-group">
+                        {{ form }}
+                        <button type="submit" class="btn btn-lg btn-dark" data-toggle="click-ripple"><i class="fab fa-fw fa-youtube me-1"></i>Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+                {% if maxres_thumbnail %}
+              <div class="block block-rounded">
+                <ul class="nav nav-tabs nav-tabs-block align-items-center" role="tablist">
+                    <li class="nav-item">
+                    <button class="nav-link active" id="maxres-tab" data-bs-toggle="tab" data-bs-target="#maxres-tab-content" role="tab" aria-controls="maxres-tab" aria-selected="true">HD (1280x720)</button>
+                  </li>
+                  {% endif %}
+                  {% if high_thumbnail %}
+                  <li class="nav-item">
+                    <button class="nav-link" id="high-tab" data-bs-toggle="tab" data-bs-target="#high-tab-content" role="tab" aria-controls="high-tab" aria-selected="false">SD (640x480)</button>
+                  </li>
+                  {% endif %}
+                  {% if medium_thumbnail %}
+                   <li class="nav-item">
+                    <button class="nav-link" id="medium-tab" data-bs-toggle="tab" data-bs-target="#medium-tab-content" role="tab" aria-controls="medium-tab" aria-selected="false">High (480x360)</button>
+                  </li>
+                  {% endif %}
+                  {% if default_thumbnail %}
+                   <li class="nav-item">
+                    <button class="nav-link" id="default-tab" data-bs-toggle="tab" data-bs-target="#default-tab-content" role="tab" aria-controls="default-tab" aria-selected="false">Default (120x90)</button>
+                  </li>
+                  <li class="nav-item ms-auto">
+                    <div class="btn-group btn-group-sm pe-2">
+                      <button type="button" class="btn btn-alt-secondary">
+                        <i class="fa fa-fw fa-pencil-alt"></i>
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+                 {% endif %}
+                {% if maxres_thumbnail %}
+                  <div class="block-content tab-content">
+                    <div class="tab-pane active" id="maxres-tab-content" role="tabpanel" aria-labelledby="btabswob-static-home-tab">
+                        <div style="text-align: center; padding-bottom: 20px">
+                          <a class="btn btn-sm btn-alt-secondary" target="_blank" href="{{ maxres_thumbnail }}" download="maxres_thumbnail.jpg">
+                              <i class="fa fa-save text-info me-1"></i> Download
+                          </a>
+                         </div>
+                        <p>
+                        <img src="{{ maxres_thumbnail }}" alt="" style="display: block; margin-left: auto; margin-right: auto; width: 100%;">
+                        </p>
+                    </div>
+                  {% endif %}
+                    {% if high_thumbnail %}
+                    <div class="tab-pane" id="high-tab-content" role="tabpanel" aria-labelledby="btabswob-static-profile-tab">
+                       <div style="text-align: center; padding-bottom: 20px">
+                            <a class="btn btn-sm btn-alt-secondary" target="_blank" href="{{ high_thumbnail }}" download="high_thumbnail.jpg">
+                              <i class="fa fa-save text-info me-1"></i> Download
+                          </a>
+                       </div>
+                        <p class="text-center">
+                      <img src="{{ high_thumbnail }}" alt="Youtube Thumbnail High Resolution">
+                        </p>
+                    </div>
+                    {% endif %}
+                     {% if medium_thumbnail %}
+                    <div class="tab-pane" id="medium-tab-content" role="tabpanel" aria-labelledby="btabswob-static-profile-tab">
+                         <div style="text-align: center; padding-bottom: 20px">
+                                <a class="btn btn-sm btn-alt-secondary" target="_blank" href="{{ medium_thumbnail }}" download="medium_thumbnail.jpg">
+                              <i class="fa fa-save text-info me-1"></i> Download
+                          </a>
+                         </div>
+                        <p class="text-center">
+                      <img src="{{ medium_thumbnail }}" alt="Youtube Thumbnail Medium Resolution">
+                        </p>
+                    </div>
+                    {% endif %}
+                    {% if default_thumbnail %}
+                    <div class="tab-pane" id="default-tab-content" role="tabpanel" aria-labelledby="btabswob-static-profile-tab">
+                         <div style="text-align: center; padding-bottom: 20px">
+                             <a class="btn btn-sm btn-alt-secondary" target="_blank" href="{{ default_thumbnail }}" download="default_thumbnail.jpg">
+                              <i class="fa fa-save text-info me-1"></i> Download
+                          </a>
+                         </div>
+                        <p class="text-center">
+                      <img src="{{ default_thumbnail }}" alt="Youtube Thumbnail Default Resolution">
+                        </p>
+                    </div>
+                    {% endif %}
+                  </div>
+              </div>
+        </div>
+      </main>
+     {% include "includes/footer.html" %}
+    </div>
+{% endblock %}

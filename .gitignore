@@ -8,4 +8,3 @@ docker-files/
 logs/
 main_page/static/
 webhooks
-logs
